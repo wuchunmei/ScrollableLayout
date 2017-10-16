@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/application_bg"
+    android:orientation="vertical">
+
+    <cn.tianya.light.view.UpbarView
+        android:id="@+id/top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:leftbuttonstatus="back"
+        app:leftbuttontype="image"
+        app:rightbuttonstatus="normal"
+        app:rightbuttontype="text"
+        app:rightsecondbuttonenabled="true"
+        app:upbartitle="@string/tianya_respondent" />
+
+    <cn.tianya.light.pulltorefresh.extras.ScrollableLayout
+        android:id="@+id/scrollableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/respondent_head_layout"
+            layout="@layout/respondent_loop_header"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:visibility="gone" />
+
+        <cn.tianya.light.view.LabelLayout
+            android:id="@+id/label_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </cn.tianya.light.view.LabelLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </cn.tianya.light.pulltorefresh.extras.ScrollableLayout>
+
+    <include
+        android:id="@+id/tab_empty"
+        layout="@layout/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</LinearLayout>
